@@ -32,7 +32,7 @@ function createDeliveryStream(dStreamName, callback) {
         ClusterJDBCURL: REDSHIFT_JDBCURL, /* required */
         CopyCommand: { /* required */
           DataTableName:    dStreamName, /* required */
-          CopyOptions:      "FORMAT AS json 'auto'",
+          CopyOptions:      "FORMAT AS json 'auto'"
           // DataTableColumns: 'STRING_VALUE'
         },
         Username: env('REDSHIFT_USER'), /* required */
