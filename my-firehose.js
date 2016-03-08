@@ -43,8 +43,8 @@ function createDeliveryStream(dStreamName, callback) {
         // arn:aws:firehose:region:account-id:deliverystream/delivery-stream-name
         // RoleARN: `arn:aws:firehose:${env('AWS_REGION')}:${env('AWS_ACCOUNT_ID')}:cluster:${env('REDSHIFT_CLUSTER_NAME')}`, /* required */
         RoleARN: `arn:aws:iam::${env('AWS_ACCOUNT_ID')}:role:firehose_delivery_role`, /* required */
-        S3Configuration: s3config,
-      },
+        S3Configuration: s3config
+      }
       // S3DestinationConfiguration: s3config
     };
 
