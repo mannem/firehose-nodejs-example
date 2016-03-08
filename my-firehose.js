@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS      = require('aws-sdk');
-const firehose = new AWS.Firehose({region : 'us-west-2'});
+const firehose = new AWS.Firehose({region : 'us-west-2'},logger : process.stdout);
 const env      = require('./env.js');
 
 function createDeliveryStream(dStreamName, callback) {
@@ -51,6 +51,7 @@ function createDeliveryStream(dStreamName, callback) {
   console.log('redshift_config', JSON.stringify(redshift_config, null, ' '));
   // Create the new stream if it does not already exist.
   firehose.createDeliveryStream(redshift_config, function (err, data) {
+    console.log(data);
     if (err) 
       return callback(err); // an error occurred
 
