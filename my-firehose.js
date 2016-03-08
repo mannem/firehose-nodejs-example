@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS      = require('aws-sdk');
-const firehose = new AWS.Firehose({region : 'us-west-2'},logger: process.stdout);
+const firehose = new AWS.Firehose({region : 'us-west-2',logger: process.stdout});
 const env      = require('./env.js');
 
 function createDeliveryStream(dStreamName, callback) {
